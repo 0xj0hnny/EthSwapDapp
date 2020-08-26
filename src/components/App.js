@@ -4,6 +4,7 @@ import {
   Grid,
   Button,
   CircularProgress,
+  Typography
 } from "@material-ui/core";
 import Web3 from "web3";
 import EthSwap from '../abis/EthSwap.json';
@@ -43,7 +44,9 @@ const App = () => {
         const token = new web3.eth.Contract(Token.abi, tokenData.address)
         setToken(token)
         let tokenBalance = await token.methods.balanceOf(accounts[0]).call()
-        setTokenBalance(tokenBalance.toString())
+        if (tokenBalance) {
+          setTokenBalance(tokenBalance.toString())
+        }
       } else {
         window.alert('Token contract not deployed to detected network.')
       }
@@ -79,7 +82,12 @@ const App = () => {
         <Grid item xs={6}>
           {
             isLoading ?
-              <CircularProgress /> :
+              <React.Fragment>
+                <div className="center">
+                  <CircularProgress />
+                  <Typography variant={"subtitle1"}>Please connect to Metamask wallet!</Typography>
+                </div>
+              </React.Fragment> :
               <React.Fragment>
                 <Grid container justify="space-between">
                   <Button variant="outlined" color={"primary"} onClick={() => {setIsBuyTokens(true)}}> Buy </Button>
