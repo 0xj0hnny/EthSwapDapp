@@ -9,4 +9,4 @@ decentralized app for swapping eth token to a fake token
 5. Happy Swapping!!
 
 ### Demo video
-[![Demo](https://youtu.be/bOyV-udQI8Q)
+[![IMAGE ALT TEXT HERE](https://youtu.be/bOyV-udQI8Q)](https://youtu.be/bOyV-udQI8Q)
