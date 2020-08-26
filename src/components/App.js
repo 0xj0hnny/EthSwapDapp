@@ -77,7 +77,7 @@ const App = () => {
 
   return (
     <React.Fragment>
-      <Navbar account={account} />
+      <Navbar account={account} isLoadingApp={isLoading} />
       <Grid container direction="column" justify="center" alignItems="center" style={{height: '100%', marginTop: '2rem'}}>
         <Grid item xs={6}>
           {

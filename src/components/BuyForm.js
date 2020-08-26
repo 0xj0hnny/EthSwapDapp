@@ -32,7 +32,7 @@ const BuyForm = ({tokenBalance, ethBalance, ethSwap, account}) => {
         <React.Fragment >
           <Grid container justify="space-between">
             <Typography variant="subtitle1" display={"inline"}  gutterBottom>
-              Input
+              From
             </Typography>
             <Typography variant="subtitle1" display={"inline"} gutterBottom>
               Balance: {ethBalance ? window.web3.utils.fromWei(ethBalance, 'Ether') : 0}
@@ -60,7 +60,7 @@ const BuyForm = ({tokenBalance, ethBalance, ethSwap, account}) => {
         <React.Fragment>
           <Grid container justify="space-between" style={{paddingTop: '1rem'}}>
             <Typography variant="subtitle1" display={"inline"}  gutterBottom>
-              Output
+              To
             </Typography>
             <Typography variant="subtitle1" display={"inline"} gutterBottom>
               Balance: {tokenBalance ? window.web3.utils.fromWei(tokenBalance, 'Ether') : 0}

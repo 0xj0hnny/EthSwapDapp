@@ -21,23 +21,24 @@ const truncateAddress = (str) => {
   }
 }
 
-const Navbar = (props) => {
-  const {account} = props;
+const Navbar = ({account, isLoadingApp}) => {
   const classes = useStyles();
 
   return (
     <AppBar position="static">
       <Toolbar variant="dense">
         <Typography variant="h6" className={classes.title}>EthSwap</Typography>
-        <Typography variant="subtitle2" style={{paddingRight: '.5rem'}}>{truncateAddress(account)}</Typography>
-        { account
-          ? <img
-            className="ml-2"
-            width='22'
-            height='22'
-            src={`data:image/png;base64,${new Identicon(account, 30).toString()}`}
-            alt=""
-          />
+        { !isLoadingApp && account ?
+          <React.Fragment>
+            <Typography variant="subtitle2" style={{paddingRight: '.5rem'}}>{truncateAddress(account)}</Typography>
+            <img
+              className="ml-2"
+              width='22'
+              height='22'
+              src={`data:image/png;base64,${new Identicon(account, 30).toString()}`}
+              alt=""
+            />
+          </React.Fragment>
           : null
         }
       </Toolbar>
